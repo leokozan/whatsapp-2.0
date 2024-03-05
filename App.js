@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView, ScrollView } from 'react-native';
 import Contato from './components/Contato';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { Dimensions } from 'react-native';
 export default function App() {
   return (
     <View>
-      <View style={styles.header}>
+      <View style={[styles.header, { height: '17%' }]}>
           <View style={styles.header1}>
             <Text style={styles.title}>WhatsApp</Text>
             <View style={styles.iconsContainer}>
@@ -24,7 +24,7 @@ export default function App() {
             </View>
           </View>
       </View>
-      <ScrollView style={styles.body}>
+      <ScrollView style={{ height: '83%'}}>
         <Contato contact='+ 42 99864-8618' message='Bom dia!'></Contato>
         <Contato contact='Nair Mainardes' message='Bom tarde!'></Contato>
         <Contato contact='+ 42 99864-8618' message='Bom noite!'></Contato>
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   text:{
-    color:'white'
+    color:'white',
+    fontWeight:'bold'
   },
   title: {
     fontSize: 28,
@@ -79,9 +80,6 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     flex:1,
     paddingRight:20
-  },
-  body:{
-    height:670
   }
 });
 
