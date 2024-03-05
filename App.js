@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,SafeAreaView, ScrollView } from 'react-native';
 import Contato from './components/Contato';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Dimensions } from 'react-native';
 export default function App() {
   return (
     <View>
