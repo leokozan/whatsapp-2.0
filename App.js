@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View,SafeAreaView, ScrollView } from 'react-native';
 import Contato from './components/Contato';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -17,19 +17,27 @@ export default function App() {
         </View>
         <View style={styles.header2}>
             <Icon name="users" size={20} style={styles.icons} color='white'/>
-            <Text style={styles.text}>Conversas</Text>
-            <Text style={styles.text}>Atualizações</Text>
-            <Text style={styles.text}>Chamdas</Text>
+            <View style={styles.options}>
+              <Text style={styles.text}>Conversas</Text>
+              <Text style={styles.text}>Atualizações</Text>
+              <Text style={styles.text}>Chamadas</Text>
+            </View>
           </View>
       </View>
-      <View style={styles.body}>
+      <ScrollView style={styles.body}>
         <Contato contact='+ 42 99864-8618' message='Bom dia!'></Contato>
         <Contato contact='Nair Mainardes' message='Bom tarde!'></Contato>
         <Contato contact='+ 42 99864-8618' message='Bom noite!'></Contato>
         <Contato contact='Kobayashi' message='Bom dia!'></Contato>
         <Contato contact='Smulai Hakari' message='Hey there im using whatsapp 2'></Contato>
         <Contato contact='Vinicião' message='Jogando Stardew Rail'></Contato>
-      </View>
+        <Contato contact='+ 42 99864-8618' message='Bom dia!'></Contato>
+        <Contato contact='Nair Mainardes' message='Bom tarde!'></Contato>
+        <Contato contact='+ 42 99864-8618' message='Bom noite!'></Contato>
+        <Contato contact='Kobayashi' message='Bom dia!'></Contato>
+        <Contato contact='Smulai Hakari' message='Hey there im using whatsapp 2'></Contato>
+        <Contato contact='Vinicião' message='Jogando Stardew Rail'></Contato>
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
@@ -38,7 +46,7 @@ export default function App() {
 const styles = StyleSheet.create({
   header: {
     backgroundColor: '#2cb961',
-    height: 150,
+    height: 140,
   },
   header1:{
     flexDirection: 'row',
@@ -48,7 +56,6 @@ const styles = StyleSheet.create({
   },
   header2:{
     flexDirection: 'row',
-    justifyContent:'space-around',
   },
   text:{
     color:'white'
@@ -66,6 +73,15 @@ const styles = StyleSheet.create({
   icons:{
     paddingLeft:10,
     paddingRight:10
+  },
+  options:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    flex:1,
+    paddingRight:20
+  },
+  body:{
+    height:670
   }
 });
 

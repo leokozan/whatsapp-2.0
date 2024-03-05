@@ -1,6 +1,5 @@
 import {View,Text,StyleSheet} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
-import LinhaHorizontal from './LinhaHorizontal';
 export default function Contato({contact,message}){
     return(
         <View style={styles.container}>
